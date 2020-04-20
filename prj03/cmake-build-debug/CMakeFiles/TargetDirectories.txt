@@ -1,0 +1,3 @@
+/mnt/d/workspace/network/prj03/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/mnt/d/workspace/network/prj03/cmake-build-debug/CMakeFiles/server.dir
+/mnt/d/workspace/network/prj03/cmake-build-debug/CMakeFiles/edit_cache.dir
