@@ -1,1 +1,0 @@
-/usr/bin/cc  -Wall -g   CMakeFiles/server.dir/server.c.o  -o server 

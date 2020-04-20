@@ -12,7 +12,8 @@ int main(int argc, const char *argv[])
 {
     int s, cs, fd[MAXC];
     struct sockaddr_in server, client;
-    char msg[2000];
+    char filename[1000];
+    char buf[2000];
     memset(fd, 0, sizeof(fd));
 
     // create socket
@@ -70,28 +71,44 @@ int main(int argc, const char *argv[])
             printf("Timeout!\n");
             continue;
         }
-        printf("get!!!\n");
+        //printf("get!!!\n");
         for (int i = 0; i < MAXC; i++) {
             if (FD_ISSET(fd[i], &fds)) {
-                int msg_len = 0;
-                // receive a message from client
-                if ((msg_len = recv(fd[i], msg, sizeof(msg), 0)) > 0) {
-                    // send the message back to client
-                    send(fd[i], msg, msg_len, 0);
-                    printf("Echo client [%d].\n", i);
+                int len = 0;
+                // receive a filename from client
+                if ((len = recv(fd[i], filename, sizeof(filename), 0)) > 0) {
+                    // send the file back to client
+                    FILE *fp = fopen(filename, "r");
+                    if (fp) {
+                        printf("Begin to transfer %s to client [%d].\n", filename, i + 1);
+                        unsigned long rret = 0;
+                        memset(buf, 0, sizeof(buf));
+                        while ((rret = fread(buf, sizeof(char), 2000, fp)) > 0) {
+                            if (send(fd[i], buf, rret, 0) < 0) {
+                                printf("Send failed.\n");
+                                break;
+                            }
+                            memset(buf, 0, sizeof(buf));
+                        }
+                        fclose(fp);
+                        printf("Transfer finished.\n");
+                    }
+                    else {
+                        printf("File %s not found.\n", filename);
+                    }
                 }
                 else {
-                    if (msg_len == 0) {
-                        printf("Client disconnected\n");
+                    if (len == 0) {
+                        printf("Client [%d] disconnected\n", i + 1);
                     }
-                    else { // msg_len < 0
+                    else { // len < 0
                         perror("Recv failed");
                     }
-                    close(fd[i]);
-                    FD_CLR(fd[i], &fds);
-                    fd[i] = 0;
-                    connection--;
                 }
+                close(fd[i]);
+                FD_CLR(fd[i], &fds);
+                fd[i] = 0;
+                connection--;
             }
         }
         if (FD_ISSET(s, &fds)) {
@@ -110,7 +127,7 @@ int main(int argc, const char *argv[])
                     }
                 }
                 connection++;
-                printf("Client [%d]: connection accepted\n", i);
+                printf("Client [%d]: connection accepted\n", i + 1);
                 if (cs > maxs) maxs = cs;
             }
             else {
@@ -121,29 +138,5 @@ int main(int argc, const char *argv[])
             }
         }
     }
-/*
-    // accept connection from an incoming client
-    int c = sizeof(struct sockaddr_in);
-    if ((fd = accept(s, (struct sockaddr *)&client, (socklen_t *)&c)) < 0) {
-        perror("accept failed\n");
-        return -1;
-    }
-    printf("connection accepted\n");
-
-	int msg_len = 0;
-    // receive a message from client
-    while ((msg_len = recv(fd, msg, sizeof(msg), 0)) > 0) {
-        // send the message back to client
-        write(fd, msg, msg_len);
-    }
-
-    if (msg_len == 0) {
-        printf("client disconnected\n");
-    }
-    else { // msg_len < 0
-        perror("recv failed\n");
-		return -1;
-    }
-*/
     return 0;
 }

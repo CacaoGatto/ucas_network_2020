@@ -12,15 +12,15 @@ int main(int argc, char *argv[])
 {
     int sock;
     struct sockaddr_in server;
-    char message[1000], server_reply[2000];
+    char filename[1000], buf[2000];
      
     // create socket
     sock = socket(AF_INET, SOCK_STREAM, 0);
     if (sock == -1) {
-        printf("create socket failed");
+        printf("Create socket failed");
 		return -1;
     }
-    printf("socket created\n");
+    printf("Socket created\n");
      
     server.sin_addr.s_addr = inet_addr("10.0.0.1");
     server.sin_family = AF_INET;
@@ -28,35 +28,48 @@ int main(int argc, char *argv[])
  
     // connect to server
     if (connect(sock, (struct sockaddr *)&server, sizeof(server)) < 0) {
-        perror("connect failed");
+        perror("Connect failed");
         return 1;
     }
      
-    printf("connected\n");
+    printf("Connected\n");
      
     while(1) {
-        printf("enter message : ");
-        scanf("%s", message);
+        memset(filename, 0, sizeof(filename));
+        printf("Filename to download : ");
+        scanf("%s", filename);
          
         // send some data
-        if (send(sock, message, strlen(message), 0) < 0) {
-            printf("send failed");
+        if (send(sock, filename, strlen(filename), 0) < 0) {
+            printf("Send failed");
             return 1;
         }
-         
+
+        FILE *fp = fopen("test.txt", "w");
+
         // receive a reply from the server
-		int len = recv(sock, server_reply, 2000, 0);
-        if (len < 0) {
-            printf("recv failed\n");
-            break;
+		int len = 0;
+		memset(buf, 0, sizeof(buf));
+        while ((len = recv(sock, buf, 2000, 0))) {
+            if (len < 0) {
+                printf("Recv failed!\n");
+                break;
+            }
+            printf("get!\n");
+            unsigned long wret = fwrite(buf, sizeof(char), len, fp);
+            if (wret < len) {
+                printf("File writing fail!\n");
+                break;
+            }
+            memset(buf, 0, sizeof(buf));
         }
-		server_reply[len] = 0;
-         
-        printf("server reply : ");
-        printf("%s\n", server_reply);
+
+        printf("File received!\n");
+        fclose(fp);
+        break;
     }
      
     close(sock);
-    printf("connect closed\n");
+    printf("Connect closed\n");
     return 0;
 }
