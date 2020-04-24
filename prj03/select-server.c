@@ -7,13 +7,17 @@
 
 #define PORT_NUM 80
 #define MAXC 8
+#define BUFSIZE 3000
+#define CONTENT_SIZE 2000
+
+char ok[] = "HTTP/1.1 200 OK\r\nContent-Length: ";
+char fail[] = "HTTP/1.1 404 File Not Found\r\n\r\n";
 
 int main(int argc, const char *argv[])
 {
     int s, cs, fd[MAXC];
     struct sockaddr_in server, client;
-    char filename[1000];
-    char buf[2000];
+    char buf[BUFSIZE], readbuf[CONTENT_SIZE];
     memset(fd, 0, sizeof(fd));
 
     // create socket
@@ -49,6 +53,7 @@ int main(int argc, const char *argv[])
     int connection = 0;
     struct timeval timeout;
     int maxs = s;
+    char filename[240];
 
     while (1)
     {
@@ -76,15 +81,18 @@ int main(int argc, const char *argv[])
             if (FD_ISSET(fd[i], &fds)) {
                 int len = 0;
                 // receive a filename from client
-                if ((len = recv(fd[i], filename, sizeof(filename), 0)) > 0) {
+                if ((len = recv(fd[i], buf, sizeof(buf), 0)) > 0) {
+                    sscanf(buf, "%*s /%[^ ]", filename);
                     // send the file back to client
                     FILE *fp = fopen(filename, "r");
                     if (fp) {
                         printf("Begin to transfer %s to client [%d].\n", filename, i + 1);
                         unsigned long rret = 0;
                         memset(buf, 0, sizeof(buf));
-                        while ((rret = fread(buf, sizeof(char), 2000, fp)) > 0) {
-                            if (send(fd[i], buf, rret, 0) < 0) {
+                        memset(readbuf, 0, sizeof(readbuf));
+                        while ((rret = fread(readbuf, sizeof(char), CONTENT_SIZE, fp)) > 0) {
+                            sprintf(buf, "%s%lu\r\n\r\n%s", ok, rret, readbuf);
+                            if (send(fd[i], buf, strlen(buf), 0) < 0) {
                                 printf("Send failed.\n");
                                 break;
                             }
@@ -95,6 +103,11 @@ int main(int argc, const char *argv[])
                     }
                     else {
                         printf("File %s not found.\n", filename);
+                        strcpy(buf, fail);
+                        if (send(fd[i], buf, strlen(buf), 0) < 0) {
+                            printf("Send failed.\n");
+                        }
+                        memset(buf, 0, sizeof(buf));
                     }
                 }
                 else {
@@ -104,11 +117,11 @@ int main(int argc, const char *argv[])
                     else { // len < 0
                         perror("Recv failed");
                     }
+                    close(fd[i]);
+                    FD_CLR(fd[i], &fds);
+                    fd[i] = 0;
+                    connection--;
                 }
-                close(fd[i]);
-                FD_CLR(fd[i], &fds);
-                fd[i] = 0;
-                connection--;
             }
         }
         if (FD_ISSET(s, &fds)) {

@@ -1,13 +1,13 @@
-all: client server
+all: client pthread-server select-server
 
 client: client.c
 	gcc -Wall -g client.c -o client
 
-server: server.c
-	gcc -Wall -g server.c -o server
+pthread-server: pthread-server.c
+	gcc -Wall -g pthread-server.c -o pthread-server -lpthread
 
-test-server: test-server.c
-	gcc -Wall -g test-server.c -o test-server
+select-server: select-server.c
+	gcc -Wall -g select-server.c -o select-server
 
 clean:
-	@rm -f client server test-server
+	@rm -f client pthread-server select-server
