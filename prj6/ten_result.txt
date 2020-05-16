@@ -1,0 +1,90 @@
+NODE b1 dumps:
+INFO: non-root switch, designated root: 0002, root path cost: 2.
+INFO: port id: 01, role: DESIGNATED.
+INFO: 	designated ->root: 0002, ->switch: 0101, ->port: 01, ->cost: 2.
+INFO: port id: 02, role: ROOT.
+INFO: 	designated ->root: 0002, ->switch: 0602, ->port: 02, ->cost: 1.
+INFO: port id: 03, role: DESIGNATED.
+INFO: 	designated ->root: 0002, ->switch: 0101, ->port: 03, ->cost: 2.
+
+NODE b2 dumps:
+INFO: non-root switch, designated root: 0002, root path cost: 3.
+INFO: port id: 01, role: ROOT.
+INFO: 	designated ->root: 0002, ->switch: 0101, ->port: 01, ->cost: 2.
+INFO: port id: 02, role: DESIGNATED.
+INFO: 	designated ->root: 0002, ->switch: 0201, ->port: 02, ->cost: 3.
+INFO: port id: 03, role: DESIGNATED.
+INFO: 	designated ->root: 0002, ->switch: 0201, ->port: 03, ->cost: 3.
+
+NODE b3 dumps:
+INFO: non-root switch, designated root: 0002, root path cost: 3.
+INFO: port id: 01, role: ALTERNATE.
+INFO: 	designated ->root: 0002, ->switch: 0201, ->port: 02, ->cost: 3.
+INFO: port id: 02, role: ROOT.
+INFO: 	designated ->root: 0002, ->switch: 0401, ->port: 01, ->cost: 2.
+INFO: port id: 03, role: DESIGNATED.
+INFO: 	designated ->root: 0002, ->switch: 0301, ->port: 03, ->cost: 3.
+
+NODE b4 dumps:
+INFO: non-root switch, designated root: 0002, root path cost: 2.
+INFO: port id: 01, role: DESIGNATED.
+INFO: 	designated ->root: 0002, ->switch: 0401, ->port: 01, ->cost: 2.
+INFO: port id: 02, role: ROOT.
+INFO: 	designated ->root: 0002, ->switch: 0501, ->port: 01, ->cost: 1.
+INFO: port id: 03, role: DESIGNATED.
+INFO: 	designated ->root: 0002, ->switch: 0401, ->port: 03, ->cost: 2.
+
+NODE b5 dumps:
+INFO: non-root switch, designated root: 0002, root path cost: 1.
+INFO: port id: 01, role: DESIGNATED.
+INFO: 	designated ->root: 0002, ->switch: 0501, ->port: 01, ->cost: 1.
+INFO: port id: 02, role: ROOT.
+INFO: 	designated ->root: 0002, ->switch: 0002, ->port: 02, ->cost: 0.
+INFO: port id: 03, role: ALTERNATE.
+INFO: 	designated ->root: 0002, ->switch: 0101, ->port: 03, ->cost: 2.
+
+NODE b6 dumps:
+INFO: non-root switch, designated root: 0002, root path cost: 1.
+INFO: port id: 01, role: ROOT.
+INFO: 	designated ->root: 0002, ->switch: 0002, ->port: 01, ->cost: 0.
+INFO: port id: 02, role: DESIGNATED.
+INFO: 	designated ->root: 0002, ->switch: 0602, ->port: 02, ->cost: 1.
+INFO: port id: 03, role: DESIGNATED.
+INFO: 	designated ->root: 0002, ->switch: 0602, ->port: 03, ->cost: 1.
+
+NODE b7 dumps:
+INFO: non-root switch, designated root: 0002, root path cost: 2.
+INFO: port id: 01, role: ALTERNATE.
+INFO: 	designated ->root: 0002, ->switch: 0201, ->port: 03, ->cost: 3.
+INFO: port id: 02, role: ROOT.
+INFO: 	designated ->root: 0002, ->switch: 0602, ->port: 03, ->cost: 1.
+INFO: port id: 03, role: DESIGNATED.
+INFO: 	designated ->root: 0002, ->switch: 0703, ->port: 03, ->cost: 2.
+
+NODE b8 dumps:
+INFO: non-root switch, designated root: 0002, root path cost: 2.
+INFO: port id: 01, role: ALTERNATE.
+INFO: 	designated ->root: 0002, ->switch: 0301, ->port: 03, ->cost: 3.
+INFO: port id: 02, role: ALTERNATE.
+INFO: 	designated ->root: 0002, ->switch: 0703, ->port: 03, ->cost: 2.
+INFO: port id: 03, role: ROOT.
+INFO: 	designated ->root: 0002, ->switch: 0903, ->port: 02, ->cost: 1.
+
+NODE b9 dumps:
+INFO: non-root switch, designated root: 0002, root path cost: 1.
+INFO: port id: 01, role: ALTERNATE.
+INFO: 	designated ->root: 0002, ->switch: 0401, ->port: 03, ->cost: 2.
+INFO: port id: 02, role: DESIGNATED.
+INFO: 	designated ->root: 0002, ->switch: 0903, ->port: 02, ->cost: 1.
+INFO: port id: 03, role: ROOT.
+INFO: 	designated ->root: 0002, ->switch: 0002, ->port: 03, ->cost: 0.
+
+NODE b0 dumps:
+INFO: this switch is root.
+INFO: port id: 01, role: DESIGNATED.
+INFO: 	designated ->root: 0002, ->switch: 0002, ->port: 01, ->cost: 0.
+INFO: port id: 02, role: DESIGNATED.
+INFO: 	designated ->root: 0002, ->switch: 0002, ->port: 02, ->cost: 0.
+INFO: port id: 03, role: DESIGNATED.
+INFO: 	designated ->root: 0002, ->switch: 0002, ->port: 03, ->cost: 0.
+

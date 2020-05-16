@@ -1,0 +1,11 @@
+DEBUG: find the following interfaces:  b0-eth1 b0-eth2 b0-eth0.
+DEBUG: received non-stp packet, ignore it.
+DEBUG: received non-stp packet, ignore it.
+DEBUG: received SIGTERM, terminate this program.
+INFO: this switch is root.
+INFO: port id: 01, role: DESIGNATED.
+INFO: 	designated ->root: 0002, ->switch: 0002, ->port: 01, ->cost: 0.
+INFO: port id: 02, role: DESIGNATED.
+INFO: 	designated ->root: 0002, ->switch: 0002, ->port: 02, ->cost: 0.
+INFO: port id: 03, role: DESIGNATED.
+INFO: 	designated ->root: 0002, ->switch: 0002, ->port: 03, ->cost: 0.

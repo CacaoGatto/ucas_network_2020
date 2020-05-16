@@ -1,0 +1,9 @@
+DEBUG: find the following interfaces:  b8-eth2 b8-eth0 b8-eth1.
+DEBUG: received SIGTERM, terminate this program.
+INFO: non-root switch, designated root: 0002, root path cost: 2.
+INFO: port id: 01, role: ALTERNATE.
+INFO: 	designated ->root: 0002, ->switch: 0301, ->port: 03, ->cost: 3.
+INFO: port id: 02, role: ALTERNATE.
+INFO: 	designated ->root: 0002, ->switch: 0703, ->port: 03, ->cost: 2.
+INFO: port id: 03, role: ROOT.
+INFO: 	designated ->root: 0002, ->switch: 0903, ->port: 02, ->cost: 1.
