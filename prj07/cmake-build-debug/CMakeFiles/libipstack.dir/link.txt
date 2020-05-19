@@ -1,0 +1,2 @@
+/usr/bin/ar qc liblibipstack.a  CMakeFiles/libipstack.dir/arp.c.o CMakeFiles/libipstack.dir/arpcache.c.o CMakeFiles/libipstack.dir/icmp.c.o CMakeFiles/libipstack.dir/ip_base.c.o CMakeFiles/libipstack.dir/packet.c.o CMakeFiles/libipstack.dir/rtable.c.o CMakeFiles/libipstack.dir/rtable_internal.c.o
+/usr/bin/ranlib liblibipstack.a

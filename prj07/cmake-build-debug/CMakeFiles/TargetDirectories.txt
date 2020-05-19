@@ -1,0 +1,4 @@
+/home/cod/workspace/ucas_network_2020/prj07/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/cod/workspace/ucas_network_2020/prj07/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/cod/workspace/ucas_network_2020/prj07/cmake-build-debug/CMakeFiles/router.dir
+/home/cod/workspace/ucas_network_2020/prj07/cmake-build-debug/CMakeFiles/libipstack.dir

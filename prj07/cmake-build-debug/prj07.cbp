@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+   <FileVersion major="1" minor="6" />
+   <Project>
+      <Option title="prj07" />
+      <Option makefile_is_custom="1" />
+      <Option compiler="gcc" />
+      <Option virtualFolders="CMake Files\;" />
+      <Build>
+      <Target title="all">
+         <Option working_dir="/home/cod/workspace/ucas_network_2020/prj07/cmake-build-debug" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/cod/workspace/ucas_network_2020/prj07/cmake-build-debug/Makefile&quot;  VERBOSE=1 all" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/cod/workspace/ucas_network_2020/prj07/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/cod/workspace/ucas_network_2020/prj07/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/cod/workspace/ucas_network_2020/prj07/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="edit_cache">
+         <Option working_dir="/home/cod/workspace/ucas_network_2020/prj07/cmake-build-debug" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/cod/workspace/ucas_network_2020/prj07/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/cod/workspace/ucas_network_2020/prj07/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/cod/workspace/ucas_network_2020/prj07/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/cod/workspace/ucas_network_2020/prj07/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="rebuild_cache">
+         <Option working_dir="/home/cod/workspace/ucas_network_2020/prj07/cmake-build-debug" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/cod/workspace/ucas_network_2020/prj07/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/cod/workspace/ucas_network_2020/prj07/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/cod/workspace/ucas_network_2020/prj07/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/cod/workspace/ucas_network_2020/prj07/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="router">
+         <Option output="/home/cod/workspace/ucas_network_2020/prj07/cmake-build-debug/router" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/cod/workspace/ucas_network_2020/prj07/cmake-build-debug" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="/home/cod/workspace/ucas_network_2020/prj07" />
+            <Add directory="/home/cod/workspace/ucas_network_2020/prj07/include" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/5" />
+            <Add directory="/usr/include/c++/5/backward" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/5" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/cod/workspace/ucas_network_2020/prj07/cmake-build-debug/Makefile&quot;  VERBOSE=1 router" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/cod/workspace/ucas_network_2020/prj07/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/cod/workspace/ucas_network_2020/prj07/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/cod/workspace/ucas_network_2020/prj07/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="router/fast">
+         <Option output="/home/cod/workspace/ucas_network_2020/prj07/cmake-build-debug/router" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/cod/workspace/ucas_network_2020/prj07/cmake-build-debug" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="/home/cod/workspace/ucas_network_2020/prj07" />
+            <Add directory="/home/cod/workspace/ucas_network_2020/prj07/include" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/5" />
+            <Add directory="/usr/include/c++/5/backward" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/5" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/cod/workspace/ucas_network_2020/prj07/cmake-build-debug/Makefile&quot;  VERBOSE=1 router/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/cod/workspace/ucas_network_2020/prj07/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/cod/workspace/ucas_network_2020/prj07/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/cod/workspace/ucas_network_2020/prj07/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="libipstack">
+         <Option output="/home/cod/workspace/ucas_network_2020/prj07/cmake-build-debug/liblibipstack.a" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/cod/workspace/ucas_network_2020/prj07/cmake-build-debug" />
+         <Option object_output="./" />
+         <Option type="2" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="/home/cod/workspace/ucas_network_2020/prj07" />
+            <Add directory="/home/cod/workspace/ucas_network_2020/prj07/include" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/5" />
+            <Add directory="/usr/include/c++/5/backward" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/5" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/cod/workspace/ucas_network_2020/prj07/cmake-build-debug/Makefile&quot;  VERBOSE=1 libipstack" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/cod/workspace/ucas_network_2020/prj07/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/cod/workspace/ucas_network_2020/prj07/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/cod/workspace/ucas_network_2020/prj07/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="libipstack/fast">
+         <Option output="/home/cod/workspace/ucas_network_2020/prj07/cmake-build-debug/liblibipstack.a" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/cod/workspace/ucas_network_2020/prj07/cmake-build-debug" />
+         <Option object_output="./" />
+         <Option type="2" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="/home/cod/workspace/ucas_network_2020/prj07" />
+            <Add directory="/home/cod/workspace/ucas_network_2020/prj07/include" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/5" />
+            <Add directory="/usr/include/c++/5/backward" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/5" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/cod/workspace/ucas_network_2020/prj07/cmake-build-debug/Makefile&quot;  VERBOSE=1 libipstack/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/cod/workspace/ucas_network_2020/prj07/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/cod/workspace/ucas_network_2020/prj07/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/cod/workspace/ucas_network_2020/prj07/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      </Build>
+      <Unit filename="/home/cod/workspace/ucas_network_2020/prj07/arp.c">
+         <Option target="libipstack"/>
+      </Unit>
+      <Unit filename="/home/cod/workspace/ucas_network_2020/prj07/arpcache.c">
+         <Option target="libipstack"/>
+      </Unit>
+      <Unit filename="/home/cod/workspace/ucas_network_2020/prj07/icmp.c">
+         <Option target="libipstack"/>
+      </Unit>
+      <Unit filename="/home/cod/workspace/ucas_network_2020/prj07/ip.c">
+         <Option target="router"/>
+      </Unit>
+      <Unit filename="/home/cod/workspace/ucas_network_2020/prj07/ip_base.c">
+         <Option target="libipstack"/>
+      </Unit>
+      <Unit filename="/home/cod/workspace/ucas_network_2020/prj07/main.c">
+         <Option target="router"/>
+      </Unit>
+      <Unit filename="/home/cod/workspace/ucas_network_2020/prj07/packet.c">
+         <Option target="libipstack"/>
+      </Unit>
+      <Unit filename="/home/cod/workspace/ucas_network_2020/prj07/rtable.c">
+         <Option target="libipstack"/>
+      </Unit>
+      <Unit filename="/home/cod/workspace/ucas_network_2020/prj07/rtable_internal.c">
+         <Option target="libipstack"/>
+      </Unit>
+      <Unit filename="/home/cod/workspace/ucas_network_2020/prj07/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\" />
+      </Unit>
+   </Project>
+</CodeBlocks_project_file>
