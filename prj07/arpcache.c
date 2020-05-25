@@ -155,6 +155,8 @@ void arpcache_insert(u32 ip4, u8 mac[ETH_ALEN])
     pthread_mutex_unlock(&arpcache.lock);
 }
 
+// #pragma clang diagnostic push
+// #pragma clang diagnostic ignored "-Wmissing-noreturn"
 // sweep arpcache periodically
 //
 // For the IP->mac entry, if the entry has been in the table for more than 15
@@ -203,3 +205,4 @@ void *arpcache_sweep(void *arg)
 
 	return NULL;
 }
+// #pragma clang diagnostic pop
