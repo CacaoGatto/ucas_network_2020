@@ -1,0 +1,1 @@
+/usr/bin/cc   -Wall -g -g   CMakeFiles/pre_tree.dir/test.c.o CMakeFiles/pre_tree.dir/base.c.o CMakeFiles/pre_tree.dir/poptrie.c.o  -o pre_tree 

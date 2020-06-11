@@ -1,0 +1,5 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 3.5.1)
+PROJECT(prj09)
+
+ADD_EXECUTABLE(pre_tree test.c base.c poptrie.c)
+SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -g")
