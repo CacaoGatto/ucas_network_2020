@@ -1,0 +1,3 @@
+/home/cod/workspace/ucas_network_2020/prj11/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/cod/workspace/ucas_network_2020/prj11/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/cod/workspace/ucas_network_2020/prj11/cmake-build-debug/CMakeFiles/tcp_stack.dir
