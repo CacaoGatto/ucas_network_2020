@@ -1,3 +1,0 @@
-/home/cod/workspace/ucas_network_2020/prj09/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/cod/workspace/ucas_network_2020/prj09/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/cod/workspace/ucas_network_2020/prj09/cmake-build-debug/CMakeFiles/pre_tree.dir

@@ -37,7 +37,6 @@ void put_base(node_t* root, u32 iface, u32 mask, u32 dest) {
     if (got) {
         current->match = 1;
         current->iface = iface;
-        current->mask = mask;
         current->dest = dest;
         return;
     }
@@ -55,15 +54,14 @@ void put_base(node_t* root, u32 iface, u32 mask, u32 dest) {
     current->son[0] = current->son[1] = NULL;
     current->match = 1;
     current->iface = iface;
-    current->mask = mask;
     current->dest = dest;
 }
 
-node_t *get_base(node_t* root, u32 mask, u32 dest) {
+node_t *get_base(node_t* root, u32 dest) {
     int depth = 0;
     u32 bit_idx = 0, bit_chk = 0x80000000;
     node_t *current = root, *result = NULL;
-    while (depth++ < mask) {
+    while (depth++ < 32) {
         bit_idx = (bit_chk & dest) >> (32 - depth);
         if (current->son[bit_idx] == NULL) break;
         current = current->son[bit_idx];

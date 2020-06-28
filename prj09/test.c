@@ -13,18 +13,16 @@
 #include <sys/time.h>
 
 #define CHK_SIZE 700000
-#define BASE
+//#define BASE
 
 #ifdef BASE
-
 int add_from_txt(int num, node_t *root) {
 #else
-
 int add_from_txt(int num, internal_t *root) {
 #endif
     char line[256];
     int count = 0;
-    FILE *fp = fopen("forwarding-table.txt", "rb");
+    FILE *fp = fopen("../forwarding-table.txt", "rb");
     if (fp == NULL) {
         printf("Open fail errno = %d. reason = %s \n", errno, strerror(errno));
         char buf[1024];
@@ -36,7 +34,7 @@ int add_from_txt(int num, internal_t *root) {
         u32 part1, part2, part3, part4, mask, iface;
         sscanf(line, "%u.%u.%u.%u %u %u", &part1, &part2, &part3, &part4, &mask, &iface);
         u32 dest = (part1 << 24) | (part2 << 16) | (part3 << 8) | part4;
-        //printf("ip : %08x ; mask : %u ; iface : %u\n", dest, mask, iface);
+        // printf("ip : %08x ; mask : %u ; iface : %u\n", dest, mask, iface);
 #ifdef BASE
         put_base(root, iface, mask, dest);
 #else
@@ -50,15 +48,13 @@ int add_from_txt(int num, internal_t *root) {
 
 
 #ifdef BASE
-
 int chk_to_txt(int num, node_t *root) {
 #else
-
 int chk_to_txt(int num, internal_t *root) {
 #endif
     char line[256];
     int count = 0;
-    FILE *fp = fopen("forwarding-table.txt", "rb");
+    FILE *fp = fopen("../forwarding-table.txt", "rb");
     if (fp == NULL) {
         printf("Open fail errno = %d. reason = %s \n", errno, strerror(errno));
         char buf[1024];
@@ -72,11 +68,15 @@ int chk_to_txt(int num, internal_t *root) {
         u32 dest = (part1 << 24) | (part2 << 16) | (part3 << 8) | part4;
         //printf("ip : %08x ; mask : %u ; iface : %u\n", dest, mask, iface);
 #ifdef BASE
-        node_t *temp = get_base(root, mask, dest);
+        node_t *temp = get_base(root, dest);
 #else
         leaf_t *temp = get_poptrie(root, dest);
 #endif
         if (++count >= num) break;
+        /*if (temp->iface != iface) {
+            printf("%d\n", count);
+            //break;
+        }*/
     }
     fclose(fp);
     return count;
@@ -92,7 +92,7 @@ int main() {
 #ifdef BASE
     printf("Space cost: %u Byte.\n", calc_space_base());
 #else
-    printf("Space cost: %u\n", calc_space_poptrie());
+    printf("Space cost: %u Byte\n", calc_space_poptrie());
 #endif
     //return 0;
     struct  timeval begin, end;
